@@ -2,13 +2,13 @@
     "name": "babelconfig",
     "version": "1.0.0",
     "description": "npm i -D typescript @babel/core @babel/preset-env @babel/preset-typescript",
-    "main": "./dist/index.js",
-    "types": "./dist/index.d.ts",
+    "main": "./build/index.js",
+    "types": "./build/index.d.ts",
     "scripts": {
-        "start": "node dist/index.js",
-        "dev": "tsc -w",
+        "start": "node build/index.js",
+        "dev": "yarn nodemon",
         "build:types": "tsc",
-        "build:application": "babel src/ --out-dir dist/ --extensions \".ts\"",
+        "build:application": "babel src/ --out-dir ./build/ --extensions \".ts\"",
         "build": "yarn build:types && yarn build:application"
     },
     "keywords": [],
@@ -20,6 +20,7 @@
         "@babel/node": "^7.13.13",
         "@babel/preset-env": "^7.13.15",
         "@babel/preset-typescript": "^7.13.0",
+        "nodemon": "^2.0.7",
         "typescript": "^4.2.4"
     }
 }
